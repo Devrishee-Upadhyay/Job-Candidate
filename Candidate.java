@@ -17,7 +17,7 @@ public class  Candidate
 	   JTextArea description;
 	   JRadioButton rdoug,rdopg;
 
-	   JComboBox campus;
+	   JComboBox city;
 	   ButtonGroup course;
 	   JButton btnSubmit, btnReset, btnExit,btnDisplay;
 
@@ -66,7 +66,7 @@ static
 			ps.setString( 1, m.getName() );
 			ps.setString( 2, m.getDescription() );
 			ps.setString( 3, m.getCourse() );
-			ps.setString( 4, m.getCampus() );
+			ps.setString( 4, m.getCity() );
 			int rows = ps.executeUpdate();			//  insert update delete  ke saath .executeUpdate use hota hai
 			sqlcon.close();
 			if(rows>0)
@@ -122,14 +122,14 @@ static
 	   {
 		 String n=name.getText().trim();
 		 String d=description.getText().trim();
-		 String ca= (campus.getSelectedIndex()>0)?campus.getSelectedItem().toString():"";
-		 String co=rdoug.isSelected()?"UG":(rdopg.isSelected()?"PG":"");
+		 String ca= (city.getSelectedIndex()>0)?city.getSelectedItem().toString():"";
+		 String co=rdoug.isSelected()?"Internship":(rdopg.isSelected()?"Full time":"");
 
 
 		 String errors = "";
 
 				if(  n.length() == 0  )	{	errors += "Name is missing\n";	}
-				if(  ca.length() == 0  )	{	errors += "Campus is not selected\n";	}
+				if(  ca.length() == 0  )	{	errors += "City is not selected\n";	}
 				if(  co.length() == 0  )	{	errors += "Course not selected\n";	}
 
 				if(errors.length() > 0 )
