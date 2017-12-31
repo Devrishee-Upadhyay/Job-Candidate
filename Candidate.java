@@ -12,7 +12,7 @@ public class  Candidate
        JFrame frame;
 	   JPanel panel;
 
-	   JLabel lblname,lbldesc,lblcampus,lblcourse;
+	   JLabel lblname,lbldesc,lblcity,lblcourse;
 	   JTextField name;
 	   JTextArea description;
 	   JRadioButton rdoug,rdopg;
@@ -212,7 +212,7 @@ static
 	  frame =new JFrame("Candidate Information Form");
 	  panel=new JPanel();
 	  lblname=new JLabel("Name");
-	  lblcampus=new JLabel("Branch Preferred");
+	  lblcity=new JLabel("Branch Preferred");
 	  lbldesc=new JLabel("Description and Experience");
 	  lblcourse=new JLabel("Job Type");
 
@@ -223,7 +223,7 @@ static
 	  rdoug=new JRadioButton("Internship");
 	  rdopg=new JRadioButton("Full Time");
 
-	  campus=new JComboBox(new String[]{"Select","New Delhi","Jaipur","Pune","Banglore"});
+	  city=new JComboBox(new String[]{"Select","New Delhi","Jaipur","Pune","Banglore"});
 
      
 		btnSubmit = new JButton("Submit");
@@ -258,8 +258,8 @@ static
 	  place(1,0,name);
 	  place(0,1,lbldesc);
 	  place(1,1,new JScrollPane(description));
-      place(0,2,lblcampus);
-	  place(1,2,campus);
+      place(0,2,lblcity);
+	  place(1,2,city);
 
 	  JPanel c=new JPanel();
 	  c.add(rdoug);
@@ -296,7 +296,7 @@ static
 		name.setText("");
 		description.setText("");
 		course.clearSelection();
-		campus.setSelectedIndex(0);
+		city.setSelectedIndex(0);
 	
 	}
 	
